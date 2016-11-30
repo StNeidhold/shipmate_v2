@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Collateral_duty resource:
+  # CREATE
+  get "/collateral_duties/new", :controller => "collateral_duties", :action => "new"
+  post "/create_collateral_duty", :controller => "collateral_duties", :action => "create"
+
+  # READ
+  get "/collateral_duties", :controller => "collateral_duties", :action => "index"
+  get "/collateral_duties/:id", :controller => "collateral_duties", :action => "show"
+
+  # UPDATE
+  get "/collateral_duties/:id/edit", :controller => "collateral_duties", :action => "edit"
+  post "/update_collateral_duty/:id", :controller => "collateral_duties", :action => "update"
+
+  # DELETE
+  get "/delete_collateral_duty/:id", :controller => "collateral_duties", :action => "destroy"
+  #------------------------------
+
   # Routes for the Rank resource:
   # CREATE
   get "/ranks/new", :controller => "ranks", :action => "new"

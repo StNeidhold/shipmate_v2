@@ -1,0 +1,25 @@
+<div class="page-header">
+  <h3>Collateral Duty #<%= @collateral_duty.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Collateral duty name</dt>
+      <dd><%= @collateral_duty.collateral_duty_name %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/collateral_duties" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/collateral_duties/<%= @collateral_duty.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_collateral_duty/<%= @collateral_duty.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

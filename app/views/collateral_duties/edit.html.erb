@@ -1,0 +1,37 @@
+<!-- Validation failure messages -->
+<% if @collateral_duty.errors.any? %>
+  <% @collateral_duty.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Collateral Duty #<%= @collateral_duty.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_collateral_duty/<%= @collateral_duty.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for collateral_duty_name -->
+      <div class="form-group">
+        <label for="collateral_duty_name" class="control-label">
+          Collateral duty name
+        </label>
+
+        <input type="text" id="collateral_duty_name" name="collateral_duty_name" placeholder="Collateral duty name" class="form-control" value="<%= @collateral_duty.collateral_duty_name %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Collateral Duty
+      </button>
+      or
+      <a href="/collateral_duties/<%= @collateral_duty.id %>">Cancel</a>
+    </form>
+  </div>
+</div>
