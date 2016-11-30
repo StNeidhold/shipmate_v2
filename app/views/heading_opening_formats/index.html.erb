@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h1>
+    Heading opening formats
+    <a href="/heading_opening_formats/new" class="btn btn-lg btn-success">New Heading opening format</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @heading_opening_formats.each do |heading_opening_format| %>
+      <tr>
+        <td><%= heading_opening_format.description %></td>
+        <td>
+          <a href="/heading_opening_formats/<%= heading_opening_format.id %>" class="btn btn-primary">Show</a>
+          <a href="/heading_opening_formats/<%= heading_opening_format.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_heading_opening_format/<%= heading_opening_format.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

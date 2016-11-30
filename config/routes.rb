@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Heading_opening_format resource:
+  # CREATE
+  get "/heading_opening_formats/new", :controller => "heading_opening_formats", :action => "new"
+  post "/create_heading_opening_format", :controller => "heading_opening_formats", :action => "create"
+
+  # READ
+  get "/heading_opening_formats", :controller => "heading_opening_formats", :action => "index"
+  get "/heading_opening_formats/:id", :controller => "heading_opening_formats", :action => "show"
+
+  # UPDATE
+  get "/heading_opening_formats/:id/edit", :controller => "heading_opening_formats", :action => "edit"
+  post "/update_heading_opening_format/:id", :controller => "heading_opening_formats", :action => "update"
+
+  # DELETE
+  get "/delete_heading_opening_format/:id", :controller => "heading_opening_formats", :action => "destroy"
+  #------------------------------
+
   # Routes for the Breakout_statement_format resource:
   # CREATE
   get "/breakout_statement_formats/new", :controller => "breakout_statement_formats", :action => "new"

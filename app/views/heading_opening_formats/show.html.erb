@@ -1,0 +1,25 @@
+<div class="page-header">
+  <h3>Heading Opening Format #<%= @heading_opening_format.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Description</dt>
+      <dd><%= @heading_opening_format.description %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/heading_opening_formats" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/heading_opening_formats/<%= @heading_opening_format.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_heading_opening_format/<%= @heading_opening_format.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
