@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "write_ups#index"
   # Routes for the Additional_rating_reference resource:
   # CREATE
   get "/additional_rating_references/new", :controller => "additional_rating_references", :action => "new"
