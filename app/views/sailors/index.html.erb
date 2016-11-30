@@ -1,0 +1,50 @@
+<div class="page-header">
+  <h1>
+    Sailors
+    <a href="/sailors/new" class="btn btn-lg btn-success">New Sailor</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Middle name</th>
+        <th>Division</th>
+        <th>Command</th>
+        <th>Rank</th>
+        <th>Rating</th>
+        <th>Position</th>
+        <th>Collateral duty 1</th>
+        <th>Collateral duty 2</th>
+        <th>Collateral duty 3</th>
+        <th>Primary responsibility</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @sailors.each do |sailor| %>
+      <tr>
+        <td><%= sailor.first_name %></td>
+        <td><%= sailor.last_name %></td>
+        <td><%= sailor.middle_name %></td>
+        <td><%= sailor.division %></td>
+        <td><%= sailor.command %></td>
+        <td><%= sailor.rank %></td>
+        <td><%= sailor.rating %></td>
+        <td><%= sailor.position %></td>
+        <td><%= sailor.collateral_duty_1 %></td>
+        <td><%= sailor.collateral_duty_2 %></td>
+        <td><%= sailor.collateral_duty_3 %></td>
+        <td><%= sailor.primary_responsibility %></td>
+        <td>
+          <a href="/sailors/<%= sailor.id %>" class="btn btn-primary">Show</a>
+          <a href="/sailors/<%= sailor.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_sailor/<%= sailor.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

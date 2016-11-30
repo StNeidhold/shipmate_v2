@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Sailor resource:
+  # CREATE
+  get "/sailors/new", :controller => "sailors", :action => "new"
+  post "/create_sailor", :controller => "sailors", :action => "create"
+
+  # READ
+  get "/sailors", :controller => "sailors", :action => "index"
+  get "/sailors/:id", :controller => "sailors", :action => "show"
+
+  # UPDATE
+  get "/sailors/:id/edit", :controller => "sailors", :action => "edit"
+  post "/update_sailor/:id", :controller => "sailors", :action => "update"
+
+  # DELETE
+  get "/delete_sailor/:id", :controller => "sailors", :action => "destroy"
+  #------------------------------
+
   # Routes for the Eval resource:
   # CREATE
   get "/evals/new", :controller => "evals", :action => "new"

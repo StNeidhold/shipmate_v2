@@ -1,0 +1,136 @@
+<!-- Validation failure messages -->
+<% if @sailor.errors.any? %>
+  <% @sailor.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Sailor #<%= @sailor.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_sailor/<%= @sailor.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for first_name -->
+      <div class="form-group">
+        <label for="first_name" class="control-label">
+          First name
+        </label>
+
+        <input type="text" id="first_name" name="first_name" placeholder="First name" class="form-control" value="<%= @sailor.first_name %>">
+      </div>
+
+      <!-- Label and input for last_name -->
+      <div class="form-group">
+        <label for="last_name" class="control-label">
+          Last name
+        </label>
+
+        <input type="text" id="last_name" name="last_name" placeholder="Last name" class="form-control" value="<%= @sailor.last_name %>">
+      </div>
+
+      <!-- Label and input for middle_name -->
+      <div class="form-group">
+        <label for="middle_name" class="control-label">
+          Middle name
+        </label>
+
+        <input type="text" id="middle_name" name="middle_name" placeholder="Middle name" class="form-control" value="<%= @sailor.middle_name %>">
+      </div>
+
+      <!-- Label and input for division -->
+      <div class="form-group">
+        <label for="division" class="control-label">
+          Division
+        </label>
+
+        <input type="text" id="division" name="division" placeholder="Division" class="form-control" value="<%= @sailor.division %>">
+      </div>
+
+      <!-- Label and input for command -->
+      <div class="form-group">
+        <label for="command" class="control-label">
+          Command
+        </label>
+
+        <input type="text" id="command" name="command" placeholder="Command" class="form-control" value="<%= @sailor.command %>">
+      </div>
+
+      <!-- Label and input for rank -->
+      <div class="form-group">
+        <label for="rank" class="control-label">
+          Rank
+        </label>
+
+        <input type="text" id="rank" name="rank" placeholder="Rank" class="form-control" value="<%= @sailor.rank %>">
+      </div>
+
+      <!-- Label and input for rating -->
+      <div class="form-group">
+        <label for="rating" class="control-label">
+          Rating
+        </label>
+
+        <input type="text" id="rating" name="rating" placeholder="Rating" class="form-control" value="<%= @sailor.rating %>">
+      </div>
+
+      <!-- Label and input for position -->
+      <div class="form-group">
+        <label for="position" class="control-label">
+          Position
+        </label>
+
+        <input type="text" id="position" name="position" placeholder="Position" class="form-control" value="<%= @sailor.position %>">
+      </div>
+
+      <!-- Label and input for collateral_duty_1 -->
+      <div class="form-group">
+        <label for="collateral_duty_1" class="control-label">
+          Collateral duty 1
+        </label>
+
+        <input type="text" id="collateral_duty_1" name="collateral_duty_1" placeholder="Collateral duty 1" class="form-control" value="<%= @sailor.collateral_duty_1 %>">
+      </div>
+
+      <!-- Label and input for collateral_duty_2 -->
+      <div class="form-group">
+        <label for="collateral_duty_2" class="control-label">
+          Collateral duty 2
+        </label>
+
+        <input type="text" id="collateral_duty_2" name="collateral_duty_2" placeholder="Collateral duty 2" class="form-control" value="<%= @sailor.collateral_duty_2 %>">
+      </div>
+
+      <!-- Label and input for collateral_duty_3 -->
+      <div class="form-group">
+        <label for="collateral_duty_3" class="control-label">
+          Collateral duty 3
+        </label>
+
+        <input type="text" id="collateral_duty_3" name="collateral_duty_3" placeholder="Collateral duty 3" class="form-control" value="<%= @sailor.collateral_duty_3 %>">
+      </div>
+
+      <!-- Label and input for primary_responsibility -->
+      <div class="form-group">
+        <label for="primary_responsibility" class="control-label">
+          Primary responsibility
+        </label>
+
+        <input type="text" id="primary_responsibility" name="primary_responsibility" placeholder="Primary responsibility" class="form-control" value="<%= @sailor.primary_responsibility %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Sailor
+      </button>
+      or
+      <a href="/sailors/<%= @sailor.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

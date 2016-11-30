@@ -1,0 +1,58 @@
+<div class="page-header">
+  <h3>Sailor #<%= @sailor.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>First name</dt>
+      <dd><%= @sailor.first_name %></dd>
+
+      <dt>Last name</dt>
+      <dd><%= @sailor.last_name %></dd>
+
+      <dt>Middle name</dt>
+      <dd><%= @sailor.middle_name %></dd>
+
+      <dt>Division</dt>
+      <dd><%= @sailor.division %></dd>
+
+      <dt>Command</dt>
+      <dd><%= @sailor.command %></dd>
+
+      <dt>Rank</dt>
+      <dd><%= @sailor.rank %></dd>
+
+      <dt>Rating</dt>
+      <dd><%= @sailor.rating %></dd>
+
+      <dt>Position</dt>
+      <dd><%= @sailor.position %></dd>
+
+      <dt>Collateral duty 1</dt>
+      <dd><%= @sailor.collateral_duty_1 %></dd>
+
+      <dt>Collateral duty 2</dt>
+      <dd><%= @sailor.collateral_duty_2 %></dd>
+
+      <dt>Collateral duty 3</dt>
+      <dd><%= @sailor.collateral_duty_3 %></dd>
+
+      <dt>Primary responsibility</dt>
+      <dd><%= @sailor.primary_responsibility %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/sailors" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/sailors/<%= @sailor.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_sailor/<%= @sailor.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
