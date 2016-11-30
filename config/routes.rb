@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Bullet_format resource:
+  # CREATE
+  get "/bullet_formats/new", :controller => "bullet_formats", :action => "new"
+  post "/create_bullet_format", :controller => "bullet_formats", :action => "create"
+
+  # READ
+  get "/bullet_formats", :controller => "bullet_formats", :action => "index"
+  get "/bullet_formats/:id", :controller => "bullet_formats", :action => "show"
+
+  # UPDATE
+  get "/bullet_formats/:id/edit", :controller => "bullet_formats", :action => "edit"
+  post "/update_bullet_format/:id", :controller => "bullet_formats", :action => "update"
+
+  # DELETE
+  get "/delete_bullet_format/:id", :controller => "bullet_formats", :action => "destroy"
+  #------------------------------
+
   # Routes for the Body_format resource:
   # CREATE
   get "/body_formats/new", :controller => "body_formats", :action => "new"
