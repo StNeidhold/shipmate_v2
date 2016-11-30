@@ -16,6 +16,7 @@ class EvalGroupsController < ApplicationController
   end
 
   def show
+    @eval = Eval.new
     @eval_group = EvalGroup.find(params[:id])
 
     render("eval_groups/show.html.erb")

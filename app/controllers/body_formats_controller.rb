@@ -6,6 +6,7 @@ class BodyFormatsController < ApplicationController
   end
 
   def show
+    @write_up = WriteUp.new
     @body_format = BodyFormat.find(params[:id])
 
     render("body_formats/show.html.erb")

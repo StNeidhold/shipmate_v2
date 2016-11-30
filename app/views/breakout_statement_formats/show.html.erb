@@ -51,6 +51,152 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_write_up" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for breakout_statement_text -->
+      <div class="form-group">
+        <label for="breakout_statement_text" class="control-label">
+          Breakout statement text
+        </label>
+
+        <input type="text" id="breakout_statement_text" name="breakout_statement_text" placeholder="Breakout statement text" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for heading_opening1 -->
+      <div class="form-group">
+        <label for="heading_opening1" class="control-label">
+          Heading opening1
+        </label>
+
+        <input type="text" id="heading_opening1" name="heading_opening1" placeholder="Heading opening1" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for heading_opening2 -->
+      <div class="form-group">
+        <label for="heading_opening2" class="control-label">
+          Heading opening2
+        </label>
+
+        <input type="text" id="heading_opening2" name="heading_opening2" placeholder="Heading opening2" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for breakout_statement_format_id -->
+      <div class="form-group">
+        <label for="breakout_statement_format_id" class="control-label">
+          Breakout statement format
+        </label>
+
+        <%= select_tag(:breakout_statement_format_id, options_from_collection_for_select(BreakoutStatementFormat.all, :id, :description), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for heading_opening -->
+      <div class="form-group">
+        <label for="heading_opening" class="control-label">
+          Heading opening
+        </label>
+
+        <input type="text" id="heading_opening" name="heading_opening" placeholder="Heading opening" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for heading_opening_format_id -->
+      <div class="form-group">
+        <label for="heading_opening_format_id" class="control-label">
+          Heading opening format
+        </label>
+
+        <%= select_tag(:heading_opening_format_id, options_from_collection_for_select(HeadingOpeningFormat.all, :id, :description), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for heading_second_opening -->
+      <div class="form-group">
+        <label for="heading_second_opening" class="control-label">
+          Heading second opening
+        </label>
+
+        <input type="text" id="heading_second_opening" name="heading_second_opening" placeholder="Heading second opening" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for body_format_id -->
+      <div class="form-group">
+        <label for="body_format_id" class="control-label">
+          Body format
+        </label>
+
+        <%= select_tag(:body_format_id, options_from_collection_for_select(BodyFormat.all, :id, :description), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for bullet_one -->
+      <div class="form-group">
+        <label for="bullet_one" class="control-label">
+          Bullet one
+        </label>
+
+        <input type="text" id="bullet_one" name="bullet_one" placeholder="Bullet one" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for bullet_two -->
+      <div class="form-group">
+        <label for="bullet_two" class="control-label">
+          Bullet two
+        </label>
+
+        <input type="text" id="bullet_two" name="bullet_two" placeholder="Bullet two" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for bullet_format_id -->
+      <div class="form-group">
+        <label for="bullet_format_id" class="control-label">
+          Bullet format
+        </label>
+
+        <%= select_tag(:bullet_format_id, options_from_collection_for_select(BulletFormat.all, :id, :description), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for bullet_three -->
+      <div class="form-group">
+        <label for="bullet_three" class="control-label">
+          Bullet three
+        </label>
+
+        <input type="text" id="bullet_three" name="bullet_three" placeholder="Bullet three" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for bullet_4 -->
+      <div class="form-group">
+        <label for="bullet_4" class="control-label">
+          Bullet 4
+        </label>
+
+        <input type="text" id="bullet_4" name="bullet_4" placeholder="Bullet 4" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for closing -->
+      <div class="form-group">
+        <label for="closing" class="control-label">
+          Closing
+        </label>
+
+        <input type="text" id="closing" name="closing" placeholder="Closing" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for eval_id -->
+      <div class="form-group">
+        <label for="eval_id" class="control-label">
+          Eval
+        </label>
+
+        <%= select_tag(:eval_id, options_from_collection_for_select(Eval.all, :id, :sailor_id), :class => "form-control") %>
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Write Up
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>

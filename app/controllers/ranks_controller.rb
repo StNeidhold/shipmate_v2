@@ -6,6 +6,7 @@ class RanksController < ApplicationController
   end
 
   def show
+    @additional_rank_reference = AdditionalRankReference.new
     @rank = Rank.find(params[:id])
 
     render("ranks/show.html.erb")

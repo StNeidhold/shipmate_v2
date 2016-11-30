@@ -6,6 +6,7 @@ class BulletFormatsController < ApplicationController
   end
 
   def show
+    @write_up = WriteUp.new
     @bullet_format = BulletFormat.find(params[:id])
 
     render("bullet_formats/show.html.erb")

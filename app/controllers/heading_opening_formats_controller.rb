@@ -6,6 +6,7 @@ class HeadingOpeningFormatsController < ApplicationController
   end
 
   def show
+    @write_up = WriteUp.new
     @heading_opening_format = HeadingOpeningFormat.find(params[:id])
 
     render("heading_opening_formats/show.html.erb")

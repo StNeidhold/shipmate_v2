@@ -6,6 +6,7 @@ class SailorsController < ApplicationController
   end
 
   def show
+    @eval = Eval.new
     @sailor = Sailor.find(params[:id])
 
     render("sailors/show.html.erb")

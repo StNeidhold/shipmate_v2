@@ -51,6 +51,29 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_additional_rating_reference" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for rating_id -->
+      <input type="hidden" name="rating_id" value="<%= @rating.id %>">
+
+      <!-- Label and input for rating_reference_text -->
+      <div class="form-group">
+        <label for="rating_reference_text" class="control-label">
+          Rating reference text
+        </label>
+
+        <input type="text" id="rating_reference_text" name="rating_reference_text" placeholder="Rating reference text" class="form-control" value="">
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Additional Rating Reference
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>

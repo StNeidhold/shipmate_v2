@@ -51,6 +51,29 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_additional_rank_reference" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for rank_id -->
+      <input type="hidden" name="rank_id" value="<%= @rank.id %>">
+
+      <!-- Label and input for rank_reference_text -->
+      <div class="form-group">
+        <label for="rank_reference_text" class="control-label">
+          Rank reference text
+        </label>
+
+        <input type="text" id="rank_reference_text" name="rank_reference_text" placeholder="Rank reference text" class="form-control" value="">
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Additional Rank Reference
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>

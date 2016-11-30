@@ -6,6 +6,7 @@ class BreakoutStatementFormatsController < ApplicationController
   end
 
   def show
+    @write_up = WriteUp.new
     @breakout_statement_format = BreakoutStatementFormat.find(params[:id])
 
     render("breakout_statement_formats/show.html.erb")
