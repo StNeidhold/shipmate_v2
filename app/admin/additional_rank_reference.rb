@@ -1,5 +1,7 @@
 ActiveAdmin.register AdditionalRankReference do
 
+ permit_params :rank_id, :rank_reference_text
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
