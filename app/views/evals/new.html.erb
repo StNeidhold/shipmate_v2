@@ -33,7 +33,7 @@
           Eval group
         </label>
 
-        <input type="text" id="eval_group_id" name="eval_group_id" placeholder="Eval group" class="form-control" value="<%= @eval.eval_group_id %>">
+        <%= select_tag(:eval_group_id, options_from_collection_for_select(EvalGroup.all, :id, :group_name, @eval.eval_group_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for trait_average -->
