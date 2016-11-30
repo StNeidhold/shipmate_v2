@@ -16,7 +16,7 @@
 
       <% @additional_rating_references.each do |additional_rating_reference| %>
       <tr>
-        <td><%= additional_rating_reference.rating_id %></td>
+        <td><%= additional_rating_reference.rating.rating_name %></td>
         <td><%= additional_rating_reference.rating_reference_text %></td>
         <td>
           <a href="/additional_rating_references/<%= additional_rating_reference.id %>" class="btn btn-primary">Show</a>
