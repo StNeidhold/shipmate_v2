@@ -1,0 +1,37 @@
+<!-- Validation failure messages -->
+<% if @eval_result.errors.any? %>
+  <% @eval_result.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Eval Result</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_eval_result" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for results_description -->
+      <div class="form-group">
+        <label for="results_description" class="control-label">
+          Results description
+        </label>
+
+        <input type="text" id="results_description" name="results_description" placeholder="Results description" class="form-control" value="<%= @eval_result.results_description %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Eval Result
+      </button>
+      or
+      <a href="/eval_results">Cancel</a>
+    </form>
+  </div>
+</div>

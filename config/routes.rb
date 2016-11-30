@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Eval_result resource:
+  # CREATE
+  get "/eval_results/new", :controller => "eval_results", :action => "new"
+  post "/create_eval_result", :controller => "eval_results", :action => "create"
+
+  # READ
+  get "/eval_results", :controller => "eval_results", :action => "index"
+  get "/eval_results/:id", :controller => "eval_results", :action => "show"
+
+  # UPDATE
+  get "/eval_results/:id/edit", :controller => "eval_results", :action => "edit"
+  post "/update_eval_result/:id", :controller => "eval_results", :action => "update"
+
+  # DELETE
+  get "/delete_eval_result/:id", :controller => "eval_results", :action => "destroy"
+  #------------------------------
+
   # Routes for the Eval_action resource:
   # CREATE
   get "/eval_actions/new", :controller => "eval_actions", :action => "new"
