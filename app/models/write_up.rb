@@ -1,6 +1,8 @@
 class WriteUp < ApplicationRecord
   # Direct associations
 
+  belongs_to :eval
+
   belongs_to :bullet_format
 
   belongs_to :body_format
