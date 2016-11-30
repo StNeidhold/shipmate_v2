@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h1>
+    Eval actions
+    <a href="/eval_actions/new" class="btn btn-lg btn-success">New Eval action</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Action description</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @eval_actions.each do |eval_action| %>
+      <tr>
+        <td><%= eval_action.action_description %></td>
+        <td>
+          <a href="/eval_actions/<%= eval_action.id %>" class="btn btn-primary">Show</a>
+          <a href="/eval_actions/<%= eval_action.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_eval_action/<%= eval_action.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

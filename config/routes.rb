@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Eval_action resource:
+  # CREATE
+  get "/eval_actions/new", :controller => "eval_actions", :action => "new"
+  post "/create_eval_action", :controller => "eval_actions", :action => "create"
+
+  # READ
+  get "/eval_actions", :controller => "eval_actions", :action => "index"
+  get "/eval_actions/:id", :controller => "eval_actions", :action => "show"
+
+  # UPDATE
+  get "/eval_actions/:id/edit", :controller => "eval_actions", :action => "edit"
+  post "/update_eval_action/:id", :controller => "eval_actions", :action => "update"
+
+  # DELETE
+  get "/delete_eval_action/:id", :controller => "eval_actions", :action => "destroy"
+  #------------------------------
+
   # Routes for the Verb resource:
   # CREATE
   get "/verbs/new", :controller => "verbs", :action => "new"

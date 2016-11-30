@@ -1,0 +1,37 @@
+<!-- Validation failure messages -->
+<% if @eval_action.errors.any? %>
+  <% @eval_action.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Eval Action #<%= @eval_action.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_eval_action/<%= @eval_action.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for action_description -->
+      <div class="form-group">
+        <label for="action_description" class="control-label">
+          Action description
+        </label>
+
+        <input type="text" id="action_description" name="action_description" placeholder="Action description" class="form-control" value="<%= @eval_action.action_description %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Eval Action
+      </button>
+      or
+      <a href="/eval_actions/<%= @eval_action.id %>">Cancel</a>
+    </form>
+  </div>
+</div>
