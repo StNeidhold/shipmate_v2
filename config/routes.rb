@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Eval_accomplishment resource:
+  # CREATE
+  get "/eval_accomplishments/new", :controller => "eval_accomplishments", :action => "new"
+  post "/create_eval_accomplishment", :controller => "eval_accomplishments", :action => "create"
+
+  # READ
+  get "/eval_accomplishments", :controller => "eval_accomplishments", :action => "index"
+  get "/eval_accomplishments/:id", :controller => "eval_accomplishments", :action => "show"
+
+  # UPDATE
+  get "/eval_accomplishments/:id/edit", :controller => "eval_accomplishments", :action => "edit"
+  post "/update_eval_accomplishment/:id", :controller => "eval_accomplishments", :action => "update"
+
+  # DELETE
+  get "/delete_eval_accomplishment/:id", :controller => "eval_accomplishments", :action => "destroy"
+  #------------------------------
+
   # Routes for the Eval_result resource:
   # CREATE
   get "/eval_results/new", :controller => "eval_results", :action => "new"

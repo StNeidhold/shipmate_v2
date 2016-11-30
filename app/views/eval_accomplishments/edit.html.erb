@@ -1,0 +1,37 @@
+<!-- Validation failure messages -->
+<% if @eval_accomplishment.errors.any? %>
+  <% @eval_accomplishment.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Eval Accomplishment #<%= @eval_accomplishment.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_eval_accomplishment/<%= @eval_accomplishment.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for accomplishment_description -->
+      <div class="form-group">
+        <label for="accomplishment_description" class="control-label">
+          Accomplishment description
+        </label>
+
+        <input type="text" id="accomplishment_description" name="accomplishment_description" placeholder="Accomplishment description" class="form-control" value="<%= @eval_accomplishment.accomplishment_description %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Eval Accomplishment
+      </button>
+      or
+      <a href="/eval_accomplishments/<%= @eval_accomplishment.id %>">Cancel</a>
+    </form>
+  </div>
+</div>
