@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Body_format resource:
+  # CREATE
+  get "/body_formats/new", :controller => "body_formats", :action => "new"
+  post "/create_body_format", :controller => "body_formats", :action => "create"
+
+  # READ
+  get "/body_formats", :controller => "body_formats", :action => "index"
+  get "/body_formats/:id", :controller => "body_formats", :action => "show"
+
+  # UPDATE
+  get "/body_formats/:id/edit", :controller => "body_formats", :action => "edit"
+  post "/update_body_format/:id", :controller => "body_formats", :action => "update"
+
+  # DELETE
+  get "/delete_body_format/:id", :controller => "body_formats", :action => "destroy"
+  #------------------------------
+
   # Routes for the Heading_opening_format resource:
   # CREATE
   get "/heading_opening_formats/new", :controller => "heading_opening_formats", :action => "new"
