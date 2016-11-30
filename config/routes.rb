@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Adjective resource:
+  # CREATE
+  get "/adjectives/new", :controller => "adjectives", :action => "new"
+  post "/create_adjective", :controller => "adjectives", :action => "create"
+
+  # READ
+  get "/adjectives", :controller => "adjectives", :action => "index"
+  get "/adjectives/:id", :controller => "adjectives", :action => "show"
+
+  # UPDATE
+  get "/adjectives/:id/edit", :controller => "adjectives", :action => "edit"
+  post "/update_adjective/:id", :controller => "adjectives", :action => "update"
+
+  # DELETE
+  get "/delete_adjective/:id", :controller => "adjectives", :action => "destroy"
+  #------------------------------
+
   # Routes for the Adverb resource:
   # CREATE
   get "/adverbs/new", :controller => "adverbs", :action => "new"

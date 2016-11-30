@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h1>
+    Adjectives
+    <a href="/adjectives/new" class="btn btn-lg btn-success">New Adjective</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Adjective word</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @adjectives.each do |adjective| %>
+      <tr>
+        <td><%= adjective.adjective_word %></td>
+        <td>
+          <a href="/adjectives/<%= adjective.id %>" class="btn btn-primary">Show</a>
+          <a href="/adjectives/<%= adjective.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_adjective/<%= adjective.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
