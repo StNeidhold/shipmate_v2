@@ -1,0 +1,46 @@
+<!-- Validation failure messages -->
+<% if @additional_rating_reference.errors.any? %>
+  <% @additional_rating_reference.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Additional Rating Reference #<%= @additional_rating_reference.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_additional_rating_reference/<%= @additional_rating_reference.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for rating_id -->
+      <div class="form-group">
+        <label for="rating_id" class="control-label">
+          Rating
+        </label>
+
+        <input type="text" id="rating_id" name="rating_id" placeholder="Rating" class="form-control" value="<%= @additional_rating_reference.rating_id %>">
+      </div>
+
+      <!-- Label and input for rating_reference_text -->
+      <div class="form-group">
+        <label for="rating_reference_text" class="control-label">
+          Rating reference text
+        </label>
+
+        <input type="text" id="rating_reference_text" name="rating_reference_text" placeholder="Rating reference text" class="form-control" value="<%= @additional_rating_reference.rating_reference_text %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Additional Rating Reference
+      </button>
+      or
+      <a href="/additional_rating_references/<%= @additional_rating_reference.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

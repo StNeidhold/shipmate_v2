@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h3>Additional Rating Reference #<%= @additional_rating_reference.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Rating</dt>
+      <dd><%= @additional_rating_reference.rating_id %></dd>
+
+      <dt>Rating reference text</dt>
+      <dd><%= @additional_rating_reference.rating_reference_text %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/additional_rating_references" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/additional_rating_references/<%= @additional_rating_reference.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_additional_rating_reference/<%= @additional_rating_reference.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

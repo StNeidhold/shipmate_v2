@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Additional_rating_reference resource:
+  # CREATE
+  get "/additional_rating_references/new", :controller => "additional_rating_references", :action => "new"
+  post "/create_additional_rating_reference", :controller => "additional_rating_references", :action => "create"
+
+  # READ
+  get "/additional_rating_references", :controller => "additional_rating_references", :action => "index"
+  get "/additional_rating_references/:id", :controller => "additional_rating_references", :action => "show"
+
+  # UPDATE
+  get "/additional_rating_references/:id/edit", :controller => "additional_rating_references", :action => "edit"
+  post "/update_additional_rating_reference/:id", :controller => "additional_rating_references", :action => "update"
+
+  # DELETE
+  get "/delete_additional_rating_reference/:id", :controller => "additional_rating_references", :action => "destroy"
+  #------------------------------
+
   # Routes for the Rating resource:
   # CREATE
   get "/ratings/new", :controller => "ratings", :action => "new"
