@@ -1,6 +1,7 @@
 class BodyFormatsController < ApplicationController
   def index
-    @body_formats = BodyFormat.page(params[:page]).per(10)
+    @q = BodyFormat.ransack(params[:q])
+    @body_formats = @q.result(:distinct => true).includes(:evals).page(params[:page]).per(10)
 
     render("body_formats/index.html.erb")
   end

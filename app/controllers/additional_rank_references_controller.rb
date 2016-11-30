@@ -1,6 +1,7 @@
 class AdditionalRankReferencesController < ApplicationController
   def index
-    @additional_rank_references = AdditionalRankReference.page(params[:page]).per(10)
+    @q = AdditionalRankReference.ransack(params[:q])
+    @additional_rank_references = @q.result(:distinct => true).includes(:rank).page(params[:page]).per(10)
 
     render("additional_rank_references/index.html.erb")
   end

@@ -1,6 +1,7 @@
 class EvalAccomplishmentsController < ApplicationController
   def index
-    @eval_accomplishments = EvalAccomplishment.page(params[:page]).per(10)
+    @q = EvalAccomplishment.ransack(params[:q])
+    @eval_accomplishments = @q.result(:distinct => true).includes().page(params[:page]).per(10)
 
     render("eval_accomplishments/index.html.erb")
   end

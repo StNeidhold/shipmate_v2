@@ -1,6 +1,7 @@
 class NounsController < ApplicationController
   def index
-    @nouns = Noun.page(params[:page]).per(10)
+    @q = Noun.ransack(params[:q])
+    @nouns = @q.result(:distinct => true).includes().page(params[:page]).per(10)
 
     render("nouns/index.html.erb")
   end

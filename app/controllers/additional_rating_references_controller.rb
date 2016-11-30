@@ -1,6 +1,7 @@
 class AdditionalRatingReferencesController < ApplicationController
   def index
-    @additional_rating_references = AdditionalRatingReference.page(params[:page]).per(10)
+    @q = AdditionalRatingReference.ransack(params[:q])
+    @additional_rating_references = @q.result(:distinct => true).includes(:rating).page(params[:page]).per(10)
 
     render("additional_rating_references/index.html.erb")
   end

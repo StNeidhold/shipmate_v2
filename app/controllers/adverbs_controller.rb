@@ -1,6 +1,7 @@
 class AdverbsController < ApplicationController
   def index
-    @adverbs = Adverb.page(params[:page]).per(10)
+    @q = Adverb.ransack(params[:q])
+    @adverbs = @q.result(:distinct => true).includes().page(params[:page]).per(10)
 
     render("adverbs/index.html.erb")
   end

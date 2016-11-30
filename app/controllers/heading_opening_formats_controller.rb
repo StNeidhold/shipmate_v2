@@ -1,6 +1,7 @@
 class HeadingOpeningFormatsController < ApplicationController
   def index
-    @heading_opening_formats = HeadingOpeningFormat.page(params[:page]).per(10)
+    @q = HeadingOpeningFormat.ransack(params[:q])
+    @heading_opening_formats = @q.result(:distinct => true).includes(:evals).page(params[:page]).per(10)
 
     render("heading_opening_formats/index.html.erb")
   end

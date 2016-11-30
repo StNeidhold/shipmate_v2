@@ -10,7 +10,8 @@ class EvalGroupsController < ApplicationController
   end
 
   def index
-    @eval_groups = current_user.eval_groups.page(params[:page]).per(10)
+    @q = current_user.eval_groups.ransack(params[:q])
+      @eval_groups = @q.result(:distinct => true).includes(:evals, :user).page(params[:page]).per(10)
 
     render("eval_groups/index.html.erb")
   end

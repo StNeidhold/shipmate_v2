@@ -1,6 +1,7 @@
 class WriteUpsController < ApplicationController
   def index
-    @write_ups = WriteUp.page(params[:page]).per(10)
+    @q = WriteUp.ransack(params[:q])
+    @write_ups = @q.result(:distinct => true).includes(:breakout_statement_format, :heading_opening_format, :body_format, :bullet_format, :eval).page(params[:page]).per(10)
 
     render("write_ups/index.html.erb")
   end

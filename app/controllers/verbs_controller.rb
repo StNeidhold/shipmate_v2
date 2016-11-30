@@ -1,6 +1,7 @@
 class VerbsController < ApplicationController
   def index
-    @verbs = Verb.page(params[:page]).per(10)
+    @q = Verb.ransack(params[:q])
+    @verbs = @q.result(:distinct => true).includes().page(params[:page]).per(10)
 
     render("verbs/index.html.erb")
   end

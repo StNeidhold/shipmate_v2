@@ -1,6 +1,7 @@
 class BulletFormatsController < ApplicationController
   def index
-    @bullet_formats = BulletFormat.page(params[:page]).per(10)
+    @q = BulletFormat.ransack(params[:q])
+    @bullet_formats = @q.result(:distinct => true).includes(:write_ups).page(params[:page]).per(10)
 
     render("bullet_formats/index.html.erb")
   end

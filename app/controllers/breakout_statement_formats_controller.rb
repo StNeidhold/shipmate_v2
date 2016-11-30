@@ -1,6 +1,7 @@
 class BreakoutStatementFormatsController < ApplicationController
   def index
-    @breakout_statement_formats = BreakoutStatementFormat.page(params[:page]).per(10)
+    @q = BreakoutStatementFormat.ransack(params[:q])
+    @breakout_statement_formats = @q.result(:distinct => true).includes(:evals).page(params[:page]).per(10)
 
     render("breakout_statement_formats/index.html.erb")
   end

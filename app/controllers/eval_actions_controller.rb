@@ -1,6 +1,7 @@
 class EvalActionsController < ApplicationController
   def index
-    @eval_actions = EvalAction.page(params[:page]).per(10)
+    @q = EvalAction.ransack(params[:q])
+    @eval_actions = @q.result(:distinct => true).includes().page(params[:page]).per(10)
 
     render("eval_actions/index.html.erb")
   end

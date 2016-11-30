@@ -1,6 +1,7 @@
 class AccentsController < ApplicationController
   def index
-    @accents = Accent.page(params[:page]).per(10)
+    @q = Accent.ransack(params[:q])
+    @accents = @q.result(:distinct => true).includes().page(params[:page]).per(10)
 
     render("accents/index.html.erb")
   end

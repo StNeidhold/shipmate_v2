@@ -3,6 +3,151 @@
     Evals
     <a href="/evals/new" class="btn btn-lg btn-success">New Eval</a>
   </h1>
+</div><div class="row mb-1">
+  <div class="col-md-12">
+    <%= search_form_for @q, :class => "collapse", :id => "evals_filters" do |f| %>
+      <p class="lead">Narrow results:</p>
+
+        <div class="form-group">
+    <%= f.label :promotion_recommendation_cont, "Promotion recommendation contains" %>
+    <%= f.text_field :promotion_recommendation_cont, :class => "form-control", :placeholder => "Promotion recommendation contains" %>
+  </div>
+
+<div class="form-group">
+  <%= f.label :mark_fives, "Mark fives" %>
+  <div class="row">
+    <div class='col-md-6 mb-1'>
+      <%= f.text_field :mark_fives_gteq, :class => "form-control", :placeholder => "Mark fives greater than or equal to" %>
+    </div>
+    <div class='col-md-6'>
+      <%= f.text_field :mark_fives_lteq, :class => "form-control", :placeholder => "Mark fives less than or equal to" %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :mark_fours, "Mark fours" %>
+  <div class="row">
+    <div class='col-md-6 mb-1'>
+      <%= f.text_field :mark_fours_gteq, :class => "form-control", :placeholder => "Mark fours greater than or equal to" %>
+    </div>
+    <div class='col-md-6'>
+      <%= f.text_field :mark_fours_lteq, :class => "form-control", :placeholder => "Mark fours less than or equal to" %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :mark_threes, "Mark threes" %>
+  <div class="row">
+    <div class='col-md-6 mb-1'>
+      <%= f.text_field :mark_threes_gteq, :class => "form-control", :placeholder => "Mark threes greater than or equal to" %>
+    </div>
+    <div class='col-md-6'>
+      <%= f.text_field :mark_threes_lteq, :class => "form-control", :placeholder => "Mark threes less than or equal to" %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :mark_twos, "Mark twos" %>
+  <div class="row">
+    <div class='col-md-6 mb-1'>
+      <%= f.text_field :mark_twos_gteq, :class => "form-control", :placeholder => "Mark twos greater than or equal to" %>
+    </div>
+    <div class='col-md-6'>
+      <%= f.text_field :mark_twos_lteq, :class => "form-control", :placeholder => "Mark twos less than or equal to" %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :mark_ones, "Mark ones" %>
+  <div class="row">
+    <div class='col-md-6 mb-1'>
+      <%= f.text_field :mark_ones_gteq, :class => "form-control", :placeholder => "Mark ones greater than or equal to" %>
+    </div>
+    <div class='col-md-6'>
+      <%= f.text_field :mark_ones_lteq, :class => "form-control", :placeholder => "Mark ones less than or equal to" %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :trait_average, "Trait average" %>
+  <div class="row">
+    <div class='col-md-6 mb-1'>
+      <%= f.text_field :trait_average_gteq, :class => "form-control", :placeholder => "Trait average greater than or equal to" %>
+    </div>
+    <div class='col-md-6'>
+      <%= f.text_field :trait_average_lteq, :class => "form-control", :placeholder => "Trait average less than or equal to" %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+          <%= f.label :created_at, "Created at" %>
+          <div class="row">
+            <div class='col-md-6 mb-1'>
+              <div class='input-group date' id='created_atgteqPicker'>
+                  <%= f.text_field :created_at_gteq, :class => "form-control", :placeholder => "Created at greater than or equal to" %>
+                  <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+              </div>
+            </div>
+
+            <div class='col-md-6'>
+              <div class='input-group date' id='created_atlteqPicker'>
+                  <%= f.text_field :created_at_lteq, :class => "form-control", :placeholder => "Created at less than or equal to" %>
+                  <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+              </div>
+            </div>
+          </div>
+      </div>
+      <script type="text/javascript">
+          $(function () {
+              $('#created_atgteqPicker').datetimepicker({
+                  format: 'YYYY-MM-DD hh:mm:SS'
+              });
+              $('#created_atlteqPicker').datetimepicker({
+                  useCurrent: false,
+                  format: 'YYYY-MM-DD hh:mm:SS'
+              });
+              $('#created_atgteqPicker').on("dp.change", function (e) {
+                  $('#created_atlteqPicker').data("DateTimePicker").minDate(e.date);
+              });
+              $('#created_atlteqPicker').on("dp.change", function (e) {
+                  $('#created_atgteqPicker').data("DateTimePicker").maxDate(e.date);
+              });
+          });
+      </script>
+
+        <div class="form-group">
+      <%= f.label :write_up_breakout_statement_text_cont, "WriteUp breakout_statement_text contains" %>
+      <%= f.text_field :write_up_breakout_statement_text_cont, :class => "form-control", :placeholder => "WriteUp breakout_statement_text contains" %>
+    </div>
+
+<div class="form-group">
+      <%= f.label :sailor_first_name_cont, "Sailor first_name contains" %>
+      <%= f.text_field :sailor_first_name_cont, :class => "form-control", :placeholder => "Sailor first_name contains" %>
+    </div>
+
+<div class="form-group">
+      <%= f.label :eval_group_group_name_cont, "EvalGroup group_name contains" %>
+      <%= f.text_field :eval_group_group_name_cont, :class => "form-control", :placeholder => "EvalGroup group_name contains" %>
+    </div>
+
+      <%= f.submit :class => "btn btn-primary btn-block mb-1" %>
+
+      <a href="/evals" class="btn btn-default btn-block mb-1">Clear filters</a>
+    <% end %>
+    <a class="btn btn-default btn-block mb-1" data-toggle="collapse" href="#evals_filters">
+      Show Filters
+    </a>
+  </div>
 </div>
 
 <div class="row">

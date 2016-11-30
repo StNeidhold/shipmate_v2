@@ -1,6 +1,7 @@
 class SailorsController < ApplicationController
   def index
-    @sailors = Sailor.page(params[:page]).per(10)
+    @q = Sailor.ransack(params[:q])
+    @sailors = @q.result(:distinct => true).includes(:evals).page(params[:page]).per(10)
 
     render("sailors/index.html.erb")
   end

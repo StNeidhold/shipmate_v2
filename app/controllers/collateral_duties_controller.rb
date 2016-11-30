@@ -1,6 +1,7 @@
 class CollateralDutiesController < ApplicationController
   def index
-    @collateral_duties = CollateralDuty.page(params[:page]).per(10)
+    @q = CollateralDuty.ransack(params[:q])
+    @collateral_duties = @q.result(:distinct => true).includes().page(params[:page]).per(10)
 
     render("collateral_duties/index.html.erb")
   end
