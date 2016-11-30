@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Accent resource:
+  # CREATE
+  get "/accents/new", :controller => "accents", :action => "new"
+  post "/create_accent", :controller => "accents", :action => "create"
+
+  # READ
+  get "/accents", :controller => "accents", :action => "index"
+  get "/accents/:id", :controller => "accents", :action => "show"
+
+  # UPDATE
+  get "/accents/:id/edit", :controller => "accents", :action => "edit"
+  post "/update_accent/:id", :controller => "accents", :action => "update"
+
+  # DELETE
+  get "/delete_accent/:id", :controller => "accents", :action => "destroy"
+  #------------------------------
+
   # Routes for the Eval_group resource:
   # CREATE
   get "/eval_groups/new", :controller => "eval_groups", :action => "new"
