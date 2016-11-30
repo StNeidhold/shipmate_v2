@@ -1,6 +1,6 @@
 class EvalEvidencesController < ApplicationController
   def index
-    @eval_evidences = EvalEvidence.all
+    @eval_evidences = EvalEvidence.page(params[:page]).per(10)
 
     render("eval_evidences/index.html.erb")
   end

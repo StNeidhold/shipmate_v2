@@ -1,6 +1,6 @@
 class EvalsController < ApplicationController
   def index
-    @evals = Eval.all
+    @evals = Eval.page(params[:page]).per(10)
 
     render("evals/index.html.erb")
   end

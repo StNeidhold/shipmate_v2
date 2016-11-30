@@ -1,6 +1,6 @@
 class EvalAccomplishmentsController < ApplicationController
   def index
-    @eval_accomplishments = EvalAccomplishment.all
+    @eval_accomplishments = EvalAccomplishment.page(params[:page]).per(10)
 
     render("eval_accomplishments/index.html.erb")
   end

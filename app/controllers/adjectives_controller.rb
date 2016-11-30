@@ -1,6 +1,6 @@
 class AdjectivesController < ApplicationController
   def index
-    @adjectives = Adjective.all
+    @adjectives = Adjective.page(params[:page]).per(10)
 
     render("adjectives/index.html.erb")
   end

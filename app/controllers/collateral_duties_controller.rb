@@ -1,6 +1,6 @@
 class CollateralDutiesController < ApplicationController
   def index
-    @collateral_duties = CollateralDuty.all
+    @collateral_duties = CollateralDuty.page(params[:page]).per(10)
 
     render("collateral_duties/index.html.erb")
   end

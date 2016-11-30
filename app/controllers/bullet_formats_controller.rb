@@ -1,6 +1,6 @@
 class BulletFormatsController < ApplicationController
   def index
-    @bullet_formats = BulletFormat.all
+    @bullet_formats = BulletFormat.page(params[:page]).per(10)
 
     render("bullet_formats/index.html.erb")
   end

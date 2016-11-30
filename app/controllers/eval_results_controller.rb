@@ -1,6 +1,6 @@
 class EvalResultsController < ApplicationController
   def index
-    @eval_results = EvalResult.all
+    @eval_results = EvalResult.page(params[:page]).per(10)
 
     render("eval_results/index.html.erb")
   end

@@ -1,6 +1,6 @@
 class NounsController < ApplicationController
   def index
-    @nouns = Noun.all
+    @nouns = Noun.page(params[:page]).per(10)
 
     render("nouns/index.html.erb")
   end

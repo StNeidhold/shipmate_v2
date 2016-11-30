@@ -1,6 +1,6 @@
 class WriteUpsController < ApplicationController
   def index
-    @write_ups = WriteUp.all
+    @write_ups = WriteUp.page(params[:page]).per(10)
 
     render("write_ups/index.html.erb")
   end

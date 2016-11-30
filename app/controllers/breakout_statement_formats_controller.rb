@@ -1,6 +1,6 @@
 class BreakoutStatementFormatsController < ApplicationController
   def index
-    @breakout_statement_formats = BreakoutStatementFormat.all
+    @breakout_statement_formats = BreakoutStatementFormat.page(params[:page]).per(10)
 
     render("breakout_statement_formats/index.html.erb")
   end

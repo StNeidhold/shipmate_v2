@@ -1,6 +1,6 @@
 class BodyFormatsController < ApplicationController
   def index
-    @body_formats = BodyFormat.all
+    @body_formats = BodyFormat.page(params[:page]).per(10)
 
     render("body_formats/index.html.erb")
   end

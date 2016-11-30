@@ -1,6 +1,6 @@
 class RanksController < ApplicationController
   def index
-    @ranks = Rank.all
+    @ranks = Rank.page(params[:page]).per(10)
 
     render("ranks/index.html.erb")
   end

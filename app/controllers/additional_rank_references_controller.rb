@@ -1,6 +1,6 @@
 class AdditionalRankReferencesController < ApplicationController
   def index
-    @additional_rank_references = AdditionalRankReference.all
+    @additional_rank_references = AdditionalRankReference.page(params[:page]).per(10)
 
     render("additional_rank_references/index.html.erb")
   end

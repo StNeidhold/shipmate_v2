@@ -1,6 +1,6 @@
 class SailorsController < ApplicationController
   def index
-    @sailors = Sailor.all
+    @sailors = Sailor.page(params[:page]).per(10)
 
     render("sailors/index.html.erb")
   end

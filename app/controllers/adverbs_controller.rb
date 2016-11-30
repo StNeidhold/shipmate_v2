@@ -1,6 +1,6 @@
 class AdverbsController < ApplicationController
   def index
-    @adverbs = Adverb.all
+    @adverbs = Adverb.page(params[:page]).per(10)
 
     render("adverbs/index.html.erb")
   end

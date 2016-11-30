@@ -1,6 +1,6 @@
 class HeadingOpeningFormatsController < ApplicationController
   def index
-    @heading_opening_formats = HeadingOpeningFormat.all
+    @heading_opening_formats = HeadingOpeningFormat.page(params[:page]).per(10)
 
     render("heading_opening_formats/index.html.erb")
   end
