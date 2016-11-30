@@ -23,3 +23,34 @@
     </div>
   </div>
 </div>
+
+<!-- A Rating has many additional_rating_references -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Additional_rating_references
+      </li>
+
+      <% @rating.additional_rating_references.each do |additional_rating_reference| %>
+        <li class="list-group-item">
+          <a href="/additional_rating_references/<%= additional_rating_reference.id %>">
+            <%= additional_rating_reference.rating_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/additional_rating_references/<%= additional_rating_reference.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/additional_rating_references/<%= additional_rating_reference.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_additional_rating_reference/<%= additional_rating_reference.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
