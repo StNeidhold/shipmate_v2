@@ -10,7 +10,7 @@ class EvalGroupsController < ApplicationController
   end
 
   def index
-    @eval_groups = EvalGroup.all
+    @eval_groups = current_user.eval_groups.page(params[:page]).per(10)
 
     render("eval_groups/index.html.erb")
   end
