@@ -1,5 +1,7 @@
 ActiveAdmin.register AdditionalRatingReference do
 
+ permit_params :rating_id, :rating_reference_text
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
