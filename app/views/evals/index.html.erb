@@ -23,7 +23,7 @@
 
       <% @evals.each do |eval| %>
       <tr>
-        <td><%= eval.sailor_id %></td>
+        <td><%= eval.sailor.first_name %></td>
         <td><%= eval.eval_group_id %></td>
         <td><%= eval.trait_average %></td>
         <td><%= eval.mark_ones %></td>
