@@ -1,0 +1,46 @@
+<!-- Validation failure messages -->
+<% if @additional_rank_reference.errors.any? %>
+  <% @additional_rank_reference.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Additional Rank Reference</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_additional_rank_reference" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for rank_id -->
+      <div class="form-group">
+        <label for="rank_id" class="control-label">
+          Rank
+        </label>
+
+        <input type="text" id="rank_id" name="rank_id" placeholder="Rank" class="form-control" value="<%= @additional_rank_reference.rank_id %>">
+      </div>
+
+      <!-- Label and input for rank_reference_text -->
+      <div class="form-group">
+        <label for="rank_reference_text" class="control-label">
+          Rank reference text
+        </label>
+
+        <input type="text" id="rank_reference_text" name="rank_reference_text" placeholder="Rank reference text" class="form-control" value="<%= @additional_rank_reference.rank_reference_text %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Additional Rank Reference
+      </button>
+      or
+      <a href="/additional_rank_references">Cancel</a>
+    </form>
+  </div>
+</div>

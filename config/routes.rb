@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Additional_rank_reference resource:
+  # CREATE
+  get "/additional_rank_references/new", :controller => "additional_rank_references", :action => "new"
+  post "/create_additional_rank_reference", :controller => "additional_rank_references", :action => "create"
+
+  # READ
+  get "/additional_rank_references", :controller => "additional_rank_references", :action => "index"
+  get "/additional_rank_references/:id", :controller => "additional_rank_references", :action => "show"
+
+  # UPDATE
+  get "/additional_rank_references/:id/edit", :controller => "additional_rank_references", :action => "edit"
+  post "/update_additional_rank_reference/:id", :controller => "additional_rank_references", :action => "update"
+
+  # DELETE
+  get "/delete_additional_rank_reference/:id", :controller => "additional_rank_references", :action => "destroy"
+  #------------------------------
+
   # Routes for the Eval_evidence resource:
   # CREATE
   get "/eval_evidences/new", :controller => "eval_evidences", :action => "new"
