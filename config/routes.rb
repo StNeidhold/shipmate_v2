@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Adverb resource:
+  # CREATE
+  get "/adverbs/new", :controller => "adverbs", :action => "new"
+  post "/create_adverb", :controller => "adverbs", :action => "create"
+
+  # READ
+  get "/adverbs", :controller => "adverbs", :action => "index"
+  get "/adverbs/:id", :controller => "adverbs", :action => "show"
+
+  # UPDATE
+  get "/adverbs/:id/edit", :controller => "adverbs", :action => "edit"
+  post "/update_adverb/:id", :controller => "adverbs", :action => "update"
+
+  # DELETE
+  get "/delete_adverb/:id", :controller => "adverbs", :action => "destroy"
+  #------------------------------
+
   # Routes for the Accent resource:
   # CREATE
   get "/accents/new", :controller => "accents", :action => "new"
