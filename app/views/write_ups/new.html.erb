@@ -87,7 +87,7 @@
           Body format
         </label>
 
-        <input type="text" id="body_format_id" name="body_format_id" placeholder="Body format" class="form-control" value="<%= @write_up.body_format_id %>">
+        <%= select_tag(:body_format_id, options_from_collection_for_select(BodyFormat.all, :id, :description, @write_up.body_format_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for bullet_one -->
