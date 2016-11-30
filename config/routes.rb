@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   root :to => "write_ups#index"
   # Routes for the Additional_rating_reference resource:
   # CREATE
