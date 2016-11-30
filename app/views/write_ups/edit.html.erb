@@ -150,7 +150,7 @@
           Eval
         </label>
 
-        <input type="text" id="eval_id" name="eval_id" placeholder="Eval" class="form-control" value="<%= @write_up.eval_id %>">
+        <%= select_tag(:eval_id, options_from_collection_for_select(Eval.all, :id, :sailor_id, @write_up.eval_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-warning">
