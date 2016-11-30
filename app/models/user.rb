@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :eval_groups
+
   # Indirect associations
 
   # Validations
