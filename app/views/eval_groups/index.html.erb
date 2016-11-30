@@ -24,8 +24,11 @@
         <td><%= eval_group.user.email %></td>
         <td>
           <a href="/eval_groups/<%= eval_group.id %>" class="btn btn-primary">Show</a>
-          <a href="/eval_groups/<%= eval_group.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_eval_group/<%= eval_group.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          
+          <% if current_user == eval_group.user %>
+            <a href="/eval_groups/<%= eval_group.id %>/edit" class="btn btn-warning">Edit</a>
+            <a href="/delete_eval_group/<%= eval_group.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <% end %>
         </td>
       </tr>
       <% end %>

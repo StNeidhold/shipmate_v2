@@ -1,4 +1,14 @@
 class EvalGroupsController < ApplicationController
+  before_action :current_user_must_be_eval_group_user, :only => [:edit, :update, :destroy]
+
+  def current_user_must_be_eval_group_user
+    eval_group = EvalGroup.find(params[:id])
+
+    unless current_user == eval_group.user
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @eval_groups = EvalGroup.all
 
