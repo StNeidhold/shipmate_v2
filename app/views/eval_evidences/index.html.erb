@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h1>
+    Eval evidences
+    <a href="/eval_evidences/new" class="btn btn-lg btn-success">New Eval evidence</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Evidence description</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @eval_evidences.each do |eval_evidence| %>
+      <tr>
+        <td><%= eval_evidence.evidence_description %></td>
+        <td>
+          <a href="/eval_evidences/<%= eval_evidence.id %>" class="btn btn-primary">Show</a>
+          <a href="/eval_evidences/<%= eval_evidence.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_eval_evidence/<%= eval_evidence.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

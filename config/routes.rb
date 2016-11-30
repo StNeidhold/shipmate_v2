@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Eval_evidence resource:
+  # CREATE
+  get "/eval_evidences/new", :controller => "eval_evidences", :action => "new"
+  post "/create_eval_evidence", :controller => "eval_evidences", :action => "create"
+
+  # READ
+  get "/eval_evidences", :controller => "eval_evidences", :action => "index"
+  get "/eval_evidences/:id", :controller => "eval_evidences", :action => "show"
+
+  # UPDATE
+  get "/eval_evidences/:id/edit", :controller => "eval_evidences", :action => "edit"
+  post "/update_eval_evidence/:id", :controller => "eval_evidences", :action => "update"
+
+  # DELETE
+  get "/delete_eval_evidence/:id", :controller => "eval_evidences", :action => "destroy"
+  #------------------------------
+
   # Routes for the Eval_accomplishment resource:
   # CREATE
   get "/eval_accomplishments/new", :controller => "eval_accomplishments", :action => "new"
