@@ -51,7 +51,7 @@
           Breakout statement format
         </label>
 
-        <input type="text" id="breakout_statement_format_id" name="breakout_statement_format_id" placeholder="Breakout statement format" class="form-control" value="<%= @write_up.breakout_statement_format_id %>">
+        <%= select_tag(:breakout_statement_format_id, options_from_collection_for_select(BreakoutStatementFormat.all, :id, :description, @write_up.breakout_statement_format_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for heading_opening -->
