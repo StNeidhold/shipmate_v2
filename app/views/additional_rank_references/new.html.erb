@@ -24,7 +24,7 @@
           Rank
         </label>
 
-        <input type="text" id="rank_id" name="rank_id" placeholder="Rank" class="form-control" value="<%= @additional_rank_reference.rank_id %>">
+        <%= select_tag(:rank_id, options_from_collection_for_select(Rank.all, :id, :rank_name, @additional_rank_reference.rank_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for rank_reference_text -->
