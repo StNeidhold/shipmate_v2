@@ -16,7 +16,13 @@
 
       <% @additional_rank_references.each do |additional_rank_reference| %>
       <tr>
-        <td><%= additional_rank_reference.rank.rank_name %></td>
+        <td>
+          <% if additional_rank_reference.rank.present? %>
+            <a href="/ranks/<%= additional_rank_reference.rank.id %>">
+              <%= additional_rank_reference.rank.rank_name %>
+            </a>
+          <% end %>
+        </td>
         <td><%= additional_rank_reference.rank_reference_text %></td>
         <td>
           <a href="/additional_rank_references/<%= additional_rank_reference.id %>" class="btn btn-primary">Show</a>

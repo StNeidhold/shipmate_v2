@@ -6,10 +6,22 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Sailor</dt>
-      <dd><%= @eval.sailor_id %></dd>
+      <dd>
+        <% if @eval.sailor.present? %>
+          <a href="/sailors/<%= @eval.sailor_id %>">
+            <%= @eval.sailor.first_name %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Eval group</dt>
-      <dd><%= @eval.eval_group_id %></dd>
+      <dd>
+        <% if @eval.eval_group.present? %>
+          <a href="/eval_groups/<%= @eval.eval_group_id %>">
+            <%= @eval.eval_group.group_name %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Trait average</dt>
       <dd><%= @eval.trait_average %></dd>

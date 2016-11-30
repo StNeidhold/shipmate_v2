@@ -23,8 +23,20 @@
 
       <% @evals.each do |eval| %>
       <tr>
-        <td><%= eval.sailor.first_name %></td>
-        <td><%= eval.eval_group.group_name %></td>
+        <td>
+          <% if eval.sailor.present? %>
+            <a href="/sailors/<%= eval.sailor.id %>">
+              <%= eval.sailor.first_name %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if eval.eval_group.present? %>
+            <a href="/eval_groups/<%= eval.eval_group.id %>">
+              <%= eval.eval_group.group_name %>
+            </a>
+          <% end %>
+        </td>
         <td><%= eval.trait_average %></td>
         <td><%= eval.mark_ones %></td>
         <td><%= eval.mark_twos %></td>

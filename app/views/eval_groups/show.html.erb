@@ -15,7 +15,13 @@
       <dd><%= @eval_group.group_rank %></dd>
 
       <dt>User</dt>
-      <dd><%= @eval_group.user_id %></dd>
+      <dd>
+        <% if @eval_group.user.present? %>
+          <a href="/users/<%= @eval_group.user_id %>">
+            <%= @eval_group.user.email %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

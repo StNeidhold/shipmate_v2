@@ -21,7 +21,13 @@
         <td><%= eval_group.group_name %></td>
         <td><%= eval_group.group_description %></td>
         <td><%= eval_group.group_rank %></td>
-        <td><%= eval_group.user.email %></td>
+        <td>
+          <% if eval_group.user.present? %>
+            <a href="/users/<%= eval_group.user.id %>">
+              <%= eval_group.user.email %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/eval_groups/<%= eval_group.id %>" class="btn btn-primary">Show</a>
           

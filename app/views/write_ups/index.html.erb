@@ -32,18 +32,48 @@
         <td><%= write_up.breakout_statement_text %></td>
         <td><%= write_up.heading_opening1 %></td>
         <td><%= write_up.heading_opening2 %></td>
-        <td><%= write_up.breakout_statement_format.description %></td>
+        <td>
+          <% if write_up.breakout_statement_format.present? %>
+            <a href="/breakout_statement_formats/<%= write_up.breakout_statement_format.id %>">
+              <%= write_up.breakout_statement_format.description %>
+            </a>
+          <% end %>
+        </td>
         <td><%= write_up.heading_opening %></td>
-        <td><%= write_up.heading_opening_format.description %></td>
+        <td>
+          <% if write_up.heading_opening_format.present? %>
+            <a href="/heading_opening_formats/<%= write_up.heading_opening_format.id %>">
+              <%= write_up.heading_opening_format.description %>
+            </a>
+          <% end %>
+        </td>
         <td><%= write_up.heading_second_opening %></td>
-        <td><%= write_up.body_format.description %></td>
+        <td>
+          <% if write_up.body_format.present? %>
+            <a href="/body_formats/<%= write_up.body_format.id %>">
+              <%= write_up.body_format.description %>
+            </a>
+          <% end %>
+        </td>
         <td><%= write_up.bullet_one %></td>
         <td><%= write_up.bullet_two %></td>
-        <td><%= write_up.bullet_format.description %></td>
+        <td>
+          <% if write_up.bullet_format.present? %>
+            <a href="/bullet_formats/<%= write_up.bullet_format.id %>">
+              <%= write_up.bullet_format.description %>
+            </a>
+          <% end %>
+        </td>
         <td><%= write_up.bullet_three %></td>
         <td><%= write_up.bullet_4 %></td>
         <td><%= write_up.closing %></td>
-        <td><%= write_up.eval.sailor_id %></td>
+        <td>
+          <% if write_up.eval.present? %>
+            <a href="/evals/<%= write_up.eval.id %>">
+              <%= write_up.eval.sailor_id %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/write_ups/<%= write_up.id %>" class="btn btn-primary">Show</a>
           <a href="/write_ups/<%= write_up.id %>/edit" class="btn btn-warning">Edit</a>

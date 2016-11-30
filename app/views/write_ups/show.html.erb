@@ -15,19 +15,37 @@
       <dd><%= @write_up.heading_opening2 %></dd>
 
       <dt>Breakout statement format</dt>
-      <dd><%= @write_up.breakout_statement_format_id %></dd>
+      <dd>
+        <% if @write_up.breakout_statement_format.present? %>
+          <a href="/breakout_statement_formats/<%= @write_up.breakout_statement_format_id %>">
+            <%= @write_up.breakout_statement_format.description %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Heading opening</dt>
       <dd><%= @write_up.heading_opening %></dd>
 
       <dt>Heading opening format</dt>
-      <dd><%= @write_up.heading_opening_format_id %></dd>
+      <dd>
+        <% if @write_up.heading_opening_format.present? %>
+          <a href="/heading_opening_formats/<%= @write_up.heading_opening_format_id %>">
+            <%= @write_up.heading_opening_format.description %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Heading second opening</dt>
       <dd><%= @write_up.heading_second_opening %></dd>
 
       <dt>Body format</dt>
-      <dd><%= @write_up.body_format_id %></dd>
+      <dd>
+        <% if @write_up.body_format.present? %>
+          <a href="/body_formats/<%= @write_up.body_format_id %>">
+            <%= @write_up.body_format.description %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Bullet one</dt>
       <dd><%= @write_up.bullet_one %></dd>
@@ -36,7 +54,13 @@
       <dd><%= @write_up.bullet_two %></dd>
 
       <dt>Bullet format</dt>
-      <dd><%= @write_up.bullet_format_id %></dd>
+      <dd>
+        <% if @write_up.bullet_format.present? %>
+          <a href="/bullet_formats/<%= @write_up.bullet_format_id %>">
+            <%= @write_up.bullet_format.description %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Bullet three</dt>
       <dd><%= @write_up.bullet_three %></dd>
@@ -48,7 +72,13 @@
       <dd><%= @write_up.closing %></dd>
 
       <dt>Eval</dt>
-      <dd><%= @write_up.eval_id %></dd>
+      <dd>
+        <% if @write_up.eval.present? %>
+          <a href="/evals/<%= @write_up.eval_id %>">
+            <%= @write_up.eval.sailor_id %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 
