@@ -1,0 +1,49 @@
+<div class="page-header">
+  <h3>Eval #<%= @eval.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Sailor</dt>
+      <dd><%= @eval.sailor_id %></dd>
+
+      <dt>Eval group</dt>
+      <dd><%= @eval.eval_group_id %></dd>
+
+      <dt>Trait average</dt>
+      <dd><%= @eval.trait_average %></dd>
+
+      <dt>Mark ones</dt>
+      <dd><%= @eval.mark_ones %></dd>
+
+      <dt>Mark twos</dt>
+      <dd><%= @eval.mark_twos %></dd>
+
+      <dt>Mark threes</dt>
+      <dd><%= @eval.mark_threes %></dd>
+
+      <dt>Mark fours</dt>
+      <dd><%= @eval.mark_fours %></dd>
+
+      <dt>Mark fives</dt>
+      <dd><%= @eval.mark_fives %></dd>
+
+      <dt>Promotion recommendation</dt>
+      <dd><%= @eval.promotion_recommendation %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/evals" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/evals/<%= @eval.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_eval/<%= @eval.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

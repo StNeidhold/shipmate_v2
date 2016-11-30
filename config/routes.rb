@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Eval resource:
+  # CREATE
+  get "/evals/new", :controller => "evals", :action => "new"
+  post "/create_eval", :controller => "evals", :action => "create"
+
+  # READ
+  get "/evals", :controller => "evals", :action => "index"
+  get "/evals/:id", :controller => "evals", :action => "show"
+
+  # UPDATE
+  get "/evals/:id/edit", :controller => "evals", :action => "edit"
+  post "/update_eval/:id", :controller => "evals", :action => "update"
+
+  # DELETE
+  get "/delete_eval/:id", :controller => "evals", :action => "destroy"
+  #------------------------------
+
   # Routes for the Bullet_format resource:
   # CREATE
   get "/bullet_formats/new", :controller => "bullet_formats", :action => "new"

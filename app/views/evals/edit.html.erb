@@ -1,0 +1,109 @@
+<!-- Validation failure messages -->
+<% if @eval.errors.any? %>
+  <% @eval.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Eval #<%= @eval.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_eval/<%= @eval.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for sailor_id -->
+      <div class="form-group">
+        <label for="sailor_id" class="control-label">
+          Sailor
+        </label>
+
+        <input type="text" id="sailor_id" name="sailor_id" placeholder="Sailor" class="form-control" value="<%= @eval.sailor_id %>">
+      </div>
+
+      <!-- Label and input for eval_group_id -->
+      <div class="form-group">
+        <label for="eval_group_id" class="control-label">
+          Eval group
+        </label>
+
+        <input type="text" id="eval_group_id" name="eval_group_id" placeholder="Eval group" class="form-control" value="<%= @eval.eval_group_id %>">
+      </div>
+
+      <!-- Label and input for trait_average -->
+      <div class="form-group">
+        <label for="trait_average" class="control-label">
+          Trait average
+        </label>
+
+        <input type="text" id="trait_average" name="trait_average" placeholder="Trait average" class="form-control" value="<%= @eval.trait_average %>">
+      </div>
+
+      <!-- Label and input for mark_ones -->
+      <div class="form-group">
+        <label for="mark_ones" class="control-label">
+          Mark ones
+        </label>
+
+        <input type="text" id="mark_ones" name="mark_ones" placeholder="Mark ones" class="form-control" value="<%= @eval.mark_ones %>">
+      </div>
+
+      <!-- Label and input for mark_twos -->
+      <div class="form-group">
+        <label for="mark_twos" class="control-label">
+          Mark twos
+        </label>
+
+        <input type="text" id="mark_twos" name="mark_twos" placeholder="Mark twos" class="form-control" value="<%= @eval.mark_twos %>">
+      </div>
+
+      <!-- Label and input for mark_threes -->
+      <div class="form-group">
+        <label for="mark_threes" class="control-label">
+          Mark threes
+        </label>
+
+        <input type="text" id="mark_threes" name="mark_threes" placeholder="Mark threes" class="form-control" value="<%= @eval.mark_threes %>">
+      </div>
+
+      <!-- Label and input for mark_fours -->
+      <div class="form-group">
+        <label for="mark_fours" class="control-label">
+          Mark fours
+        </label>
+
+        <input type="text" id="mark_fours" name="mark_fours" placeholder="Mark fours" class="form-control" value="<%= @eval.mark_fours %>">
+      </div>
+
+      <!-- Label and input for mark_fives -->
+      <div class="form-group">
+        <label for="mark_fives" class="control-label">
+          Mark fives
+        </label>
+
+        <input type="text" id="mark_fives" name="mark_fives" placeholder="Mark fives" class="form-control" value="<%= @eval.mark_fives %>">
+      </div>
+
+      <!-- Label and input for promotion_recommendation -->
+      <div class="form-group">
+        <label for="promotion_recommendation" class="control-label">
+          Promotion recommendation
+        </label>
+
+        <input type="text" id="promotion_recommendation" name="promotion_recommendation" placeholder="Promotion recommendation" class="form-control" value="<%= @eval.promotion_recommendation %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Eval
+      </button>
+      or
+      <a href="/evals/<%= @eval.id %>">Cancel</a>
+    </form>
+  </div>
+</div>
