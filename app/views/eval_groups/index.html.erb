@@ -21,7 +21,7 @@
         <td><%= eval_group.group_name %></td>
         <td><%= eval_group.group_description %></td>
         <td><%= eval_group.group_rank %></td>
-        <td><%= eval_group.user_id %></td>
+        <td><%= eval_group.user.email %></td>
         <td>
           <a href="/eval_groups/<%= eval_group.id %>" class="btn btn-primary">Show</a>
           <a href="/eval_groups/<%= eval_group.id %>/edit" class="btn btn-warning">Edit</a>
