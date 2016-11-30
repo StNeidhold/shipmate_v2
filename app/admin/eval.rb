@@ -1,5 +1,7 @@
 ActiveAdmin.register Eval do
 
+ permit_params :sailor_id, :eval_group_id, :trait_average, :mark_ones, :mark_twos, :mark_threes, :mark_fours, :mark_fives, :promotion_recommendation
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
