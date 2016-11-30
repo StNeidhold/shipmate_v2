@@ -114,7 +114,7 @@
           Bullet format
         </label>
 
-        <input type="text" id="bullet_format_id" name="bullet_format_id" placeholder="Bullet format" class="form-control" value="<%= @write_up.bullet_format_id %>">
+        <%= select_tag(:bullet_format_id, options_from_collection_for_select(BulletFormat.all, :id, :description, @write_up.bullet_format_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for bullet_three -->
