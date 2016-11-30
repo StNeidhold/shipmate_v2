@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Verb resource:
+  # CREATE
+  get "/verbs/new", :controller => "verbs", :action => "new"
+  post "/create_verb", :controller => "verbs", :action => "create"
+
+  # READ
+  get "/verbs", :controller => "verbs", :action => "index"
+  get "/verbs/:id", :controller => "verbs", :action => "show"
+
+  # UPDATE
+  get "/verbs/:id/edit", :controller => "verbs", :action => "edit"
+  post "/update_verb/:id", :controller => "verbs", :action => "update"
+
+  # DELETE
+  get "/delete_verb/:id", :controller => "verbs", :action => "destroy"
+  #------------------------------
+
   devise_for :users
   # Routes for the User resource:
   # READ

@@ -1,0 +1,37 @@
+<!-- Validation failure messages -->
+<% if @verb.errors.any? %>
+  <% @verb.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Verb</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_verb" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for verb_word -->
+      <div class="form-group">
+        <label for="verb_word" class="control-label">
+          Verb word
+        </label>
+
+        <input type="text" id="verb_word" name="verb_word" placeholder="Verb word" class="form-control" value="<%= @verb.verb_word %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Verb
+      </button>
+      or
+      <a href="/verbs">Cancel</a>
+    </form>
+  </div>
+</div>
