@@ -1,0 +1,56 @@
+<div class="page-header">
+  <h1>
+    Write ups
+    <a href="/write_ups/new" class="btn btn-lg btn-success">New Write up</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Breakout statement text</th>
+        <th>Heading opening1</th>
+        <th>Heading opening2</th>
+        <th>Breakout statement format</th>
+        <th>Heading opening</th>
+        <th>Heading opening format</th>
+        <th>Heading second opening</th>
+        <th>Body format</th>
+        <th>Bullet one</th>
+        <th>Bullet two</th>
+        <th>Bullet format</th>
+        <th>Bullet three</th>
+        <th>Bullet 4</th>
+        <th>Closing</th>
+        <th>Eval</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @write_ups.each do |write_up| %>
+      <tr>
+        <td><%= write_up.breakout_statement_text %></td>
+        <td><%= write_up.heading_opening1 %></td>
+        <td><%= write_up.heading_opening2 %></td>
+        <td><%= write_up.breakout_statement_format_id %></td>
+        <td><%= write_up.heading_opening %></td>
+        <td><%= write_up.heading_opening_format_id %></td>
+        <td><%= write_up.heading_second_opening %></td>
+        <td><%= write_up.body_format_id %></td>
+        <td><%= write_up.bullet_one %></td>
+        <td><%= write_up.bullet_two %></td>
+        <td><%= write_up.bullet_format_id %></td>
+        <td><%= write_up.bullet_three %></td>
+        <td><%= write_up.bullet_4 %></td>
+        <td><%= write_up.closing %></td>
+        <td><%= write_up.eval_id %></td>
+        <td>
+          <a href="/write_ups/<%= write_up.id %>" class="btn btn-primary">Show</a>
+          <a href="/write_ups/<%= write_up.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_write_up/<%= write_up.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

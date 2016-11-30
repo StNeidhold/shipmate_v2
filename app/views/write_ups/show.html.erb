@@ -1,0 +1,67 @@
+<div class="page-header">
+  <h3>Write Up #<%= @write_up.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Breakout statement text</dt>
+      <dd><%= @write_up.breakout_statement_text %></dd>
+
+      <dt>Heading opening1</dt>
+      <dd><%= @write_up.heading_opening1 %></dd>
+
+      <dt>Heading opening2</dt>
+      <dd><%= @write_up.heading_opening2 %></dd>
+
+      <dt>Breakout statement format</dt>
+      <dd><%= @write_up.breakout_statement_format_id %></dd>
+
+      <dt>Heading opening</dt>
+      <dd><%= @write_up.heading_opening %></dd>
+
+      <dt>Heading opening format</dt>
+      <dd><%= @write_up.heading_opening_format_id %></dd>
+
+      <dt>Heading second opening</dt>
+      <dd><%= @write_up.heading_second_opening %></dd>
+
+      <dt>Body format</dt>
+      <dd><%= @write_up.body_format_id %></dd>
+
+      <dt>Bullet one</dt>
+      <dd><%= @write_up.bullet_one %></dd>
+
+      <dt>Bullet two</dt>
+      <dd><%= @write_up.bullet_two %></dd>
+
+      <dt>Bullet format</dt>
+      <dd><%= @write_up.bullet_format_id %></dd>
+
+      <dt>Bullet three</dt>
+      <dd><%= @write_up.bullet_three %></dd>
+
+      <dt>Bullet 4</dt>
+      <dd><%= @write_up.bullet_4 %></dd>
+
+      <dt>Closing</dt>
+      <dd><%= @write_up.closing %></dd>
+
+      <dt>Eval</dt>
+      <dd><%= @write_up.eval_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/write_ups" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/write_ups/<%= @write_up.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_write_up/<%= @write_up.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
