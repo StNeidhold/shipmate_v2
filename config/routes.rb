@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Eval_group resource:
+  # CREATE
+  get "/eval_groups/new", :controller => "eval_groups", :action => "new"
+  post "/create_eval_group", :controller => "eval_groups", :action => "create"
+
+  # READ
+  get "/eval_groups", :controller => "eval_groups", :action => "index"
+  get "/eval_groups/:id", :controller => "eval_groups", :action => "show"
+
+  # UPDATE
+  get "/eval_groups/:id/edit", :controller => "eval_groups", :action => "edit"
+  post "/update_eval_group/:id", :controller => "eval_groups", :action => "update"
+
+  # DELETE
+  get "/delete_eval_group/:id", :controller => "eval_groups", :action => "destroy"
+  #------------------------------
+
   # Routes for the Sailor resource:
   # CREATE
   get "/sailors/new", :controller => "sailors", :action => "new"

@@ -1,0 +1,34 @@
+<div class="page-header">
+  <h3>Eval Group #<%= @eval_group.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Group name</dt>
+      <dd><%= @eval_group.group_name %></dd>
+
+      <dt>Group description</dt>
+      <dd><%= @eval_group.group_description %></dd>
+
+      <dt>Group rank</dt>
+      <dd><%= @eval_group.group_rank %></dd>
+
+      <dt>User</dt>
+      <dd><%= @eval_group.user_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/eval_groups" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/eval_groups/<%= @eval_group.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_eval_group/<%= @eval_group.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
