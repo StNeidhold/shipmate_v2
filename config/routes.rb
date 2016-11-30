@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Breakout_statement_format resource:
+  # CREATE
+  get "/breakout_statement_formats/new", :controller => "breakout_statement_formats", :action => "new"
+  post "/create_breakout_statement_format", :controller => "breakout_statement_formats", :action => "create"
+
+  # READ
+  get "/breakout_statement_formats", :controller => "breakout_statement_formats", :action => "index"
+  get "/breakout_statement_formats/:id", :controller => "breakout_statement_formats", :action => "show"
+
+  # UPDATE
+  get "/breakout_statement_formats/:id/edit", :controller => "breakout_statement_formats", :action => "edit"
+  post "/update_breakout_statement_format/:id", :controller => "breakout_statement_formats", :action => "update"
+
+  # DELETE
+  get "/delete_breakout_statement_format/:id", :controller => "breakout_statement_formats", :action => "destroy"
+  #------------------------------
+
   # Routes for the Write_up resource:
   # CREATE
   get "/write_ups/new", :controller => "write_ups", :action => "new"
