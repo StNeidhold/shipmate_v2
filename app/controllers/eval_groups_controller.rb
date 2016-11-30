@@ -1,5 +1,5 @@
 class EvalGroupsController < ApplicationController
-  before_action :current_user_must_be_eval_group_user, :only => [:edit, :update, :destroy]
+  before_action :current_user_must_be_eval_group_user, :only => [:show, :edit, :update, :destroy]
 
   def current_user_must_be_eval_group_user
     eval_group = EvalGroup.find(params[:id])
