@@ -69,7 +69,7 @@
           Heading opening format
         </label>
 
-        <input type="text" id="heading_opening_format_id" name="heading_opening_format_id" placeholder="Heading opening format" class="form-control" value="<%= @write_up.heading_opening_format_id %>">
+        <%= select_tag(:heading_opening_format_id, options_from_collection_for_select(HeadingOpeningFormat.all, :id, :description, @write_up.heading_opening_format_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for heading_second_opening -->
